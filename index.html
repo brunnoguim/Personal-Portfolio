@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <title>Brunno Guimarães</title>
+</head>
+<body onload="heroAnimation()">
+    <div id="header">
+        <div id="title"><a href="#hero">Bg</a></div>
+        <ul id="navbar">
+            <li class="navlink"><a href="#hero">Home</a></li>
+            <li class="navlink"><a href="#about">About</a></li>
+            <li class="navlink"><a href="#work">Work</a></li>
+            <li class="navlink"><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="mobile-menu">
+            <div class="dots"></div>
+            <div class="dots"></div>
+            <div class="dots"></div>
+        </div>
+    </div>
+    <div id="hero">
+        <h1 id="h1-hero">Brunno Guimarães</h1>
+        <h2 id="h2-hero">I'm a <span id="digitar" class="spans"></span></h2>
+    </div>
+    <div id="about" class="section">
+        <div id="about-1">
+            <h1>About Me</h1>
+            <p>I’m a front-end developer currently based in Curitiba/PR, with an emphasis in <span class="spans" id="minimalism">clean</span> and <span class="spans">interactive</span> projects</p><br>
+            <p id="erase1">After being raised by a software developer, I decided to try a different path with law school and spent 4 years working with corporate and tax law, only to realize that I actually liked to google "center nested div" all along</p><br>
+            <h2 id="erase2">Main Skills:</h2>
+            <div id="about-showcase">
+                <div class="about-boxes"><img src="images/html5.png" alt="html5"></div>
+                <div class="about-boxes"><img src="images/css3.png" alt="css3"></div>
+                <div class="about-boxes"><img src="images/js.png" alt="js"></div>
+                <div class="about-boxes"><img src="images/bootstrap.png" alt="bootstrap"></div>
+                <div class="about-boxes"><img src="images/react.png" alt="react"></div>
+                <div class="about-boxes"><img src="images/gsap.png" alt="gsap"></div>
+            </div>
+        </div>
+        <div id="about-2">
+
+        </div>
+    </div>
+    <div id="work" class="section">
+        <div id="work-1">
+            <h1>Work</h1>
+            <h2>Japa Autopeças Case:</h2>
+            <p>After almost 25 years in the autoparts business, Japa Autopeças wanted not only to refurbish its brand, but also establish its digital presence with a simple yet responsive and functional <span class="spans"><a href="http://japaautopecas.com.br/" target="_blank" rel="noopener noreferrer">website</a></span></p>
+            <div id="logos">
+                <img src="images/logo2.jpg" alt="logo2" id="logo2">
+            </div>
+        </div>
+        <div id="work-2">
+            <img src="images/sitejapa.png" alt="sitejapa" data-tilt data-tilt-speed="800" data-tilt-max="10">
+        </div>
+    </div>
+    <div id="contact" class="section">
+            <div id="contact-1">
+                <h1>Contact</h1>
+                <div id="form">
+                <form action="" id="contact-form" autocomplete="off" data-netlify="true">
+                    <h2>Get in Touch!</h2>
+                    <div class="input-boxes">
+                        <input type="text" id="name" name="name" required="required" autocomplete="off">
+                        <span>Name</span>
+                    </div>
+                    <div class="input-boxes">
+                        <input type="text" id="email" name="email" required="required" autocomplete="off">
+                        <span>Email</span>
+                    </div>
+                    <div class="input-boxes">
+                        <textarea required="required" id="message" name="message"></textarea>
+                        <span>Type your message!</span>
+                        <div class="input-boxes">
+                            <input type="submit" value="Send">
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div id="contact-2">
+                <div id="container-c2">
+                    <div class="social-lines" id="line1">
+                        <div class="icons" id="icon1"><i class="fas fa-at"></i></div>
+                        <p>brunno.gd@gmail.com</p>
+                    </div>
+                    <div class="social-lines" id="line2">
+                        <div class="icons" id="icon2"><i class="fas fa-phone-alt"></i></div>
+                        <p>+55 (41) 99123-2491</p>
+                    </div>
+                    <div class="social-lines" id="line3">
+                        <div class="icons" id="icon3"><i class="fab fa-github"></i></div>
+                        <p class="spans"><a href="https://github.com/brunnoguim" target="_blank" rel="noopener noreferrer">Github</a></p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
