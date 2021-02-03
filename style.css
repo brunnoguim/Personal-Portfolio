@@ -15,13 +15,15 @@ body{
     color: white;
 	width: 100%;
     overflow-x: hidden;
-    padding-left: 8%;
-    padding-right: 8%;
 }
 
 body p{
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+}
+
+.sections{
+    padding: 0 8%;
 }
 
 .spans{
@@ -38,23 +40,22 @@ body p{
 
 #header{
     display: flex;
-    justify-content: space-between;
-    padding-right: 8%;
-    margin-left: -8%;
     padding-top: 5px;
     padding-bottom: 10px;
-    position: fixed;
-    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
     background-color: #232323;
+    position: fixed;
     transition:0.7s;
     z-index: 1;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #title{
     font-family: Montserrat;
     font-size: 72px;
     font-weight: 800;
-    padding-left: 8%;
 }
 
 #title a{
@@ -82,8 +83,7 @@ body p{
     color:#357CBE;
 }
 
-#mobile-menu{
-	cursor:pointer;
+#mobile-menu-fake{
     z-index:2;
     display: flex;
     align-items: center;
@@ -93,6 +93,15 @@ body p{
     pointer-events: none;
     opacity:0;
     transition: 0.8s;
+}
+
+#mobile-menu{
+    list-style: none;
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    align-items: center;
+    transition: 0.5s;
 }
 
 .dots{
@@ -120,7 +129,26 @@ body p{
 }
 
 #digitar{
-    border-right: 1.4px solid #5baaf5;
+    position:relative;
+}
+
+#digitar::after{
+    position:absolute;
+    content: "";
+    right: -5px;
+    width:1px;
+    height: 100%;
+    border-right: 2px solid #357CBE;
+    animation: blink 0.8s infinite ease-in-out;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 #about{
@@ -128,18 +156,22 @@ body p{
     display: grid;
     grid-gap: 0em 4em;
 	grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows:minmax(200px, 580px);
+    grid-auto-rows:minmax(200px, 100vh);
+    padding-top: 17vh;
 }
 
 #about h1{
     font-size: 90px;
     font-weight: 600;
-    padding-top: 17vh;
 }
 
 #about p{
     font-size: 24px;
     padding-right: 1em;
+}
+
+#minimalism{
+    cursor: default;
 }
 
 #about h2{
@@ -181,10 +213,9 @@ body p{
 }
 
 #work h2{
-    font-size: 44px;
+    font-size: 40px;
     font-weight: 600;
-    line-height: 180%;
-    padding-top: 2vh;
+    padding: 3vh 0 2vh 0;
 }
 
 #work p{
@@ -218,6 +249,10 @@ body p{
     width:100%;
     opacity: 0;
     transition:0.6s;
+}
+
+#mobile-logo{
+    display: none;
 }
 
 #work-2 img{
@@ -349,4 +384,123 @@ body p{
 #line3 p a:hover{
     color:#0080f8;
     text-shadow: 0 0 2.5px #357CBE;
+}
+
+@media screen and (max-width: 600px){
+    #header{
+        width:100%;
+    }
+    #navbar{
+        position:fixed;
+		background-color:#232323;
+		height:100vh;
+		width:100%;
+		flex-direction:column;
+        justify-content: space-around;
+		clip-path:circle(2px at 95% 5%);
+		-webkit-clip-path:circle(2px at 95% 5%);
+		transition:all 0.7s ease-out;
+        pointer-events:none;
+        margin-left: -8%;
+    }
+    #navbar.open{
+		clip-path:circle(1000px at 95% 5%);
+        -webkit-clip-path:circle(1000px at 95% 5%);
+        background-color: black;
+        pointer-events:all;	
+    }
+    #navbar li{
+        padding-left: 0;
+    }
+    #mobile-menu{
+        display: flex;
+        cursor: pointer;
+    }
+    #hero h1{
+        font-size: 55px;
+        padding-bottom: 15px;
+        line-height: 110%;
+        padding-top: 37vh
+    }
+    #hero h2{
+        font-size: 30px;
+    }
+    #about{
+        height: 200vh;
+    }
+    #about h1{
+        font-size: 55px;
+        line-height: 150%;
+    }
+    #about h2{
+        font-size: 34px;
+        line-height: 130%;
+        padding-bottom: 15px;
+    }
+    #about p{
+        font-size: 17px;
+        padding-right: 10px;
+    }
+    #about-showcase{
+        padding: 10px;
+        justify-content: space-around;
+    }
+    #work{
+        height: 200vh;
+    }
+    #work h1{
+        font-size: 55px;
+        line-height: 150%;
+    }
+    #work h2{
+        font-size: 34px;
+        line-height: 130%;
+        padding-top: 0px;
+    }
+    #work p{
+        font-size: 17px;
+        padding-right: 10px;
+    }
+    #logos{
+        width: 100%;
+    }
+    #mobile-logo{
+        display:block;
+        text-align: center;
+        margin-top: 15px;
+    }
+    #work-2{
+        justify-content: space-around;
+    }
+    #work-2 img{
+        margin: auto;
+        height: 100%;
+        text-align: center;
+        display: block;
+    }
+    #contact{
+        height: 130vh;
+    }
+    #contact h1{
+        font-size: 55px;
+        line-height: 150%;
+    }
+    #contact h2{
+        font-size: 34px;
+        line-height: 130%;
+        padding-bottom: 15px;
+    }
+    #contact p{
+        font-size: 24px;
+        padding-right: 10px;
+    }
+    #form{
+        width: 100%;
+    }
+    #container-c2{
+        padding-top:15vh;
+    }
+    #minimalism{
+        pointer-events: none;
+    }
 }

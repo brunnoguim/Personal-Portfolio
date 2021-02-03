@@ -9,10 +9,22 @@ function heroAnimation(){
     })
 }
 
+//Mobile nav menu
+var mobileMenu = document.querySelector('#mobile-menu')
+var navbar = document.querySelector('#navbar')
+
+mobileMenu.addEventListener("click", ()=> {
+  navbar.classList.toggle("open");
+});
+
+navbar.addEventListener("click", ()=> {
+    navbar.classList.toggle("open");
+});
+
 //Writing on click animation
 var texto = document.querySelector('#digitar')
 texto.addEventListener("click", apagar)
-var opções = ['front-end developer', 'software developer', 'coder', 'undefined', 'just kidding (:', 'nothing to see here', 'just move on ...', "that's it, you've seen it all", "please stop clicking here", "congratulations, you just lost clicking privileges!"]
+var opções = ['front-end developer', 'software developer', 'coder', 'undefined', 'just kidding (:', 'nothing to see here', 'just move on ...', "that's it, you've seen it all", "please stop clicking here", "congrats, you just lost clicking privileges!"]
 texto.innerHTML = `${opções[0]}`
 var contagemTextos = 0
 var contagemLetras = 0
@@ -75,14 +87,12 @@ function popdown(){
     })
 }
 
-
 //minalism span on hover animation
 var minimalism = document.querySelector('#minimalism')
 var erase1 = document.querySelector('#erase1')
 var erase2 = document.querySelector('#erase2')
 var box = document.querySelector('#about-showcase')
-var navbar = document.querySelector('#navbar')
-var dots = document.querySelector('#mobile-menu')
+var dots = document.querySelector('#mobile-menu-fake')
 
 minimalism.addEventListener("mouseover", erase)
 minimalism.addEventListener("mouseout", write)
@@ -105,6 +115,16 @@ function write(){
     navbar.style.opacity = "1"
     dots.style.opacity = "0"
     dots.style.right = "0%"
+}
+
+//interaction span on click mini-game
+
+var interaction = document.querySelector('#interaction')
+
+interaction.addEventListener("click", miniGame)
+
+function miniGame(){
+    window.alert('Sorry, this feature is still in development')
 }
 
 //About scroll Animation
@@ -143,7 +163,7 @@ gsap.from("#work-1", {
 gsap.from("#work-2", {
     scrollTrigger: {
         trigger:"#work-2", 
-        start:"top 55%", 
+        start:"top 60%", 
     }, 
     x: 200, 
     autoAlpha: 0, 
