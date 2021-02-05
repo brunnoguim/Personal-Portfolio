@@ -74,7 +74,7 @@ function popup(){
         y:-8,
         x:8 ,
         textShadow: '-8px 8px 0px black',
-        duration:0.3
+        duration:0.2
     })  
 }
 
@@ -83,11 +83,11 @@ function popdown(){
         y:0,
         x:0,
         textShadow: '',
-        duration:0.3
+        duration:0.2
     })
 }
 
-//minalism span on hover animation
+//Minalism span on hover animation
 var minimalism = document.querySelector('#minimalism')
 var erase1 = document.querySelector('#erase1')
 var erase2 = document.querySelector('#erase2')
@@ -117,14 +117,160 @@ function write(){
     dots.style.right = "0%"
 }
 
-//interaction span on click mini-game
+//Images click events
+var html = document.querySelector('#img1')
+var css = document.querySelector('#img2')
+var js = document.querySelector('#img3')
+
+html.addEventListener("mouseover", ()=>{
+    gsap.to(html,{
+        y:-8,
+        x:8 ,
+        duration:0.2
+    })  
+})
+
+html.addEventListener("mouseout", ()=>{
+    gsap.to(html,{
+        y:0,
+        x:0,
+        duration:0.2
+    })
+})
+
+css.addEventListener("mouseover", ()=>{
+    gsap.to(css,{
+        y:-8,
+        x:8 ,
+        duration:0.2
+    })  
+})
+
+css.addEventListener("mouseout", ()=>{
+    gsap.to(css,{
+        y:0,
+        x:0,
+        duration:0.2
+    })
+})
+
+js.addEventListener("mouseover", ()=>{
+    gsap.to(js,{
+        y:-8,
+        x:8 ,
+        duration:0.2
+    })  
+})
+
+js.addEventListener("mouseout", ()=>{
+    gsap.to(js,{
+        y:0,
+        x:0,
+        duration:0.2
+    })
+})
+
+html.addEventListener("click", ()=>{
+    html.style.zIndex = "10"
+    css.style.zIndex = "9"
+    js.style.zIndex = "8"
+})
+
+css.addEventListener("click", ()=>{
+    html.style.zIndex = "10"
+    css.style.zIndex = "11"
+    js.style.zIndex = "8"
+})
+
+js.addEventListener("click", ()=>{
+    html.style.zIndex = "10"
+    css.style.zIndex = "11"
+    js.style.zIndex = "12"
+})
+
+//Interaction span on click mini-game
 
 var interaction = document.querySelector('#interaction')
+var modalBg = document.querySelector('#modal-bg')
+var close = document.querySelector('#close')
+var block = document.querySelector('#block')
+var hole = document.querySelector('#hole')
+var character = document.querySelector('#character')
+var line = document.querySelector('#line')
+var modal2 = document.querySelector('#modal2')
+var scoreDisplay = document.querySelector('#score-display')
+var jumping = 0
+var score = 0
+var playing = 0
 
-interaction.addEventListener("click", miniGame)
+    //Open main modal
+interaction.addEventListener("click", ()=>{
+    modalBg.style.display = "flex"
+    scoreDisplay.innerHTML = `Your current score is: ${score}`
+})
+    //Close main modal
+close.addEventListener("click", ()=>{
+    modalBg.style.display = "none" 
+})
 
-function miniGame(){
-    window.alert('Sorry, this feature is still in development')
+    //Randomize holes in the blocks
+hole.addEventListener("animationiteration", ()=> {
+    var random = Math.random()*60
+    hole.style.top = `${random}%`
+    score++
+})
+
+    //Main play function
+function play(){
+        //Setting up the game  
+    modal2.style.display = "none"
+    block.style.display = "block"
+    block.style.animation = "block 1.9s infinite"
+    block.style.animationTimingFunction = "linear"
+    hole.style.animation = "block 1.9s infinite"
+    hole.style.animationTimingFunction = "linear"
+    playing = 1
+    score = 0
+        //Gravity function
+    gravity = setInterval(function(){
+        var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"))
+        if((jumping == 0) && (playing == 1)){    
+            character.style.top = `${characterTop+3}px`
+        }
+    },7)
+        //Game over function
+    setInterval(function(){
+        var blockRight = parseInt(window.getComputedStyle(block).getPropertyValue("right"))
+        var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"))
+        var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"))
+        if((characterTop > parseInt(window.getComputedStyle(line).getPropertyValue("top"))) || ((blockRight > 545) && ((characterTop<holeTop-5)||(characterTop>holeTop+170)))){
+            modal2.style.display = "flex"
+            character.style.top = "30px"
+            block.style.animation = ""
+            hole.style.animation = ""
+            playing = 0
+            clearInterval(gravity)
+            scoreDisplay.innerHTML = `Your current score is: ${score}`
+        }
+    }, 7)
+}
+
+    //Jump function
+function jump(){
+    jumping = 1
+    let jumpCount = 0
+    var jumpInterval = setInterval(function(){
+        var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"))
+        if(characterTop > 6){
+            character.style.top = `${characterTop-4}px`
+        }
+        if(jumpCount>20){
+            clearInterval(jumpInterval)
+            jumping=0
+            jumpCount=0
+        }
+        jumpCount++
+    },5)
 }
 
 //About scroll Animation
@@ -138,7 +284,7 @@ gsap.from("#about-1", {
     ease: "back.out(1.5)",
     duration: 1
 })
-gsap.from("#about-2", {
+gsap.from("#img1, #img2, #img3", {
     scrollTrigger: {
         trigger:"#about-2", 
         start:"top 55%", 
@@ -146,6 +292,7 @@ gsap.from("#about-2", {
     x: 200, 
     autoAlpha: 0, 
     ease: "back.out(1.5)",
+    stagger: 0.25,
     duration: 1
 })
 

@@ -47,7 +47,7 @@ body p{
     background-color: #232323;
     position: fixed;
     transition:0.7s;
-    z-index: 1;
+    z-index: 50;
     width: 100%;
     justify-content: space-between;
 }
@@ -84,7 +84,7 @@ body p{
 }
 
 #mobile-menu-fake{
-    z-index:2;
+    z-index:99;
     display: flex;
     align-items: center;
     position: absolute;
@@ -158,11 +158,13 @@ body p{
 	grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows:minmax(200px, 100vh);
     padding-top: 17vh;
+    padding-bottom: 10vh;
 }
 
 #about h1{
     font-size: 90px;
     font-weight: 600;
+    padding-bottom: 25px;
 }
 
 #about p{
@@ -196,6 +198,179 @@ body p{
 .about-boxes img{
 	max-height: 100%;
     max-width: 100%;
+}
+
+#about-2{
+    position: relative;
+}
+
+#about-2 img{
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px black) brightness(110%);
+}
+
+
+#img1{
+    max-width: 65%;
+    position: absolute;
+    z-index: 10;
+}
+
+#img2{
+    max-width: 65%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    z-index: 9;
+}
+
+#img3{
+    max-width: 65%;
+    position: absolute;
+    right:0;
+    bottom:0;
+    z-index: 8;
+}
+
+#modal-bg{
+    position:fixed;
+    top:0;
+    left:0;
+	height: 100vh;
+	width: 100%;
+	background-color:rgba(0, 0, 0, 0.6);
+	display:none;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+}
+
+#modal{
+	width:50%;
+    height:80%;
+    margin-top:13vh;
+	background-color: #232323;
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#modal i{
+    top:7px;
+    right:10px;
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#game{
+    width: 90%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+#block{
+    width:70px;
+    background-color: black;
+    height:100%;
+    right:-30px;
+    position: absolute;
+    display: none;
+}
+
+#modal2{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width:80%;
+    background-color:#1d68af;
+    position: absolute;
+    border-radius: 10px;
+    padding:15px;
+}
+
+#modal2 h2{
+    font-size: 30px;
+}
+
+#modal2 p{
+    font-size: 19px;
+    text-align: center;
+}
+
+#modal2 button{
+    width: 150px;
+    background-color: #232323;
+    border-radius: 8px;
+    color:white;
+    border:none;
+    cursor:pointer;
+    line-height: 150%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.1s;
+}
+
+#modal2 button:hover{
+    background-color: black;
+    box-shadow: 0 0 5px #232323;
+}
+
+#hole{
+    width:70px;
+    background-color: #232323;
+    height:200px;
+    right:-30px;
+    position: absolute;
+}
+
+@keyframes block{
+    0%{
+        right:-70px;
+    }
+    100%{
+        right:100%;
+    }
+}
+
+#character{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top:30px;
+    right:90%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#character img{
+    max-width:140%;
+    max-height:140%;
+    vertical-align: middle;
+}
+
+#line{
+    width: 100%;
+    height: 1px;
+    top:610px;
+    position:absolute;
 }
 
 #work{
@@ -373,7 +548,7 @@ body p{
     color:#232323;
     background-color: white;
     font-size: 22px;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 #line3 p a{
@@ -420,13 +595,14 @@ body p{
         font-size: 55px;
         padding-bottom: 15px;
         line-height: 110%;
-        padding-top: 37vh
+        padding-top: 40vh
     }
     #hero h2{
         font-size: 30px;
     }
     #about{
         height: 200vh;
+        padding-bottom: 0px;
     }
     #about h1{
         font-size: 55px;
@@ -444,6 +620,15 @@ body p{
     #about-showcase{
         padding: 10px;
         justify-content: space-around;
+    }
+    #img1{
+        max-width: 80%;
+    }
+    #img2{
+        max-width: 80%;
+    }
+    #img3{
+        max-width: 80%;
     }
     #work{
         height: 200vh;

@@ -51,7 +51,9 @@
             </div>
         </div>
         <div id="about-2">
-
+            <img src="images/abouthtml.png" alt="html" id="img1">
+            <img src="images/aboutcss.png" alt="css" id="img2">
+            <img src="images/aboutjs.png" alt="js" id="img3">
         </div>
     </div>
     <div id="work" class="sections">
@@ -110,6 +112,24 @@
                     </div>
                 </div>
             </div>
+    </div>
+    <div id="modal-bg">
+        <div id="modal">
+            <i class="fas fa-times" id="close"></i>
+            <div id="game" onclick="jump()">
+                <div id="block"></div>
+                <div id="hole"></div>
+                <div id="character"><img src="images/flappybird.png" alt=""></div>
+                <div id="line"></div>
+                <div id="modal2">
+                    <h2>Instructions</h2>
+                    <p>Click anywhere on the game or press spacebar to flap</p>
+                    <p>Avoid the blocks and the bottom edge of the screen while flying</p>
+                    <h2 id="score-display"></h2>
+                    <button onclick="play()">Play</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
