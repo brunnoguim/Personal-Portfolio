@@ -688,4 +688,7 @@ body p{
     #minimalism{
         pointer-events: none;
     }
+    #interaction{
+        pointer-events:none
+    }
 }
