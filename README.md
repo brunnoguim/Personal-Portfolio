@@ -4,7 +4,10 @@ Live view at: https://brunnoguimaraes.netlify.app/
 
 Built from scratch using only html, css, js and gsap
 
-# Future Features
+#Changelog
 
-- Mobile version for the interaction mini-game
-- Implement list style on the work section (currently only displays 1 project)
+- Version 1.0
+Deployed the base version of the portolio
+
+- Version 1.1
+Changed the hit detection on the interaction mini-game needed to implement its responsiveness (mobile version still pending)
