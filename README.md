@@ -4,7 +4,7 @@ Live view at: https://brunnoguimaraes.netlify.app/
 
 Built from scratch using only html, css, js and gsap
 
-#Changelog
+# Changelog
 
 - Version 1.0
 Deployed the base version of the portolio
