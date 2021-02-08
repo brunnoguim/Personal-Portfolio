@@ -243,7 +243,8 @@ function play(){
         var blockRight = parseInt(window.getComputedStyle(block).getPropertyValue("right"))
         var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"))
         var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"))
-        if((characterTop > parseInt(window.getComputedStyle(line).getPropertyValue("top"))) || ((blockRight > 545) && ((characterTop<holeTop-5)||(characterTop>holeTop+170)))){
+        var characterRight = parseInt(window.getComputedStyle(character).getPropertyValue("right"))
+        if((characterTop > parseInt(window.getComputedStyle(line).getPropertyValue("top"))) || (((blockRight + 70 > characterRight) && (blockRight < characterRight + 40)) && ((characterTop<holeTop-5)||(characterTop>holeTop+170)))){
             modal2.style.display = "flex"
             character.style.top = "30px"
             block.style.animation = ""
