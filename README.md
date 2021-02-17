@@ -14,6 +14,6 @@ Built from scratch using only html, css, js and gsap
 
   Changed the hit detection on the interaction mini-game in order to implement its responsiveness (mobile version still pending)
 
-- Version 1.1.1
+    - Version 1.1.1
 
-  Fixed minor responsiveness issues
+      Fixed minor responsiveness issues
