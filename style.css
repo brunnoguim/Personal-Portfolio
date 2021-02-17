@@ -601,7 +601,7 @@ body p{
         font-size: 30px;
     }
     #about{
-        height: 220vh;
+        height: 250vh;
         padding-bottom: 0px;
     }
     #about h1{
@@ -664,7 +664,7 @@ body p{
         display: block;
     }
     #contact{
-        height: 150vh;
+        height: 155vh;
     }
     #contact h1{
         font-size: 55px;
@@ -683,7 +683,7 @@ body p{
         width: 100%;
     }
     #container-c2{
-        padding-top:35vh;
+        padding-top: 25vh;
         padding-bottom: 10vh;
     }
     #minimalism{
